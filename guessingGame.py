@@ -1,29 +1,35 @@
 import random
-print("Number Guessing Game: ")
 
-number = random.randint(1,9)
+print("Number guessing game")
 
+# randint function to generate the random number between 1 to 9
+number = random.randint(1, 9)
+
+# number of chances to be given to the user to guess the number
+# or it is the inputs given by user into input box here number of chances are 5
 chances = 0
 
-print("Guess a number between 1 and 9: ")
+print("Guess a number (between 1 and 9):")
 
-while chances<5 :
-    guess = int(input("Enter your guess: "))
+# While loop to count the number of chances
+while chances < 5:
 
-    if guess == number :
-        print("Congratulations You Have Won")
+    # Enter a number between 1 to 9
+    guess = int(input("Enter your guess:- "))
 
+    # Compare the user entered number with the number to be guessed
+
+    if guess == number:
+        print("Congratulation YOU WON!!!")
         break
 
-    elif guess<number:
-        print("Your guess was too low, guess a number higher than", guess)
+   
+    # The user entered number is greater than the generated number
+    else:
+        print("Your guess was too high: Guess a number lower than", guess)
 
-    else :
-        print("Your guess was too high, guess a number lower than", guess)
-
-    chances+= 1
-
-if not chances<5 :
-    print("You lose..!! The number is ", number)
-
-
+    # Increase the value of chance by 1
+    
+#to check whether the user guessed the number right..
+if not chances < 5:
+    print("YOU LOSE!!! The number is", number)
